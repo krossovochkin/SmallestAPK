@@ -1,7 +1,7 @@
 Smallest APK
 =============
 
-This is source code with compile instructions for creating Android apk file of 3030 bytes.
+This is source code with compile instructions for creating Android apk file of 3042 bytes.
 
 This project created with Ant build system.<br>
 ```android create project --target 9 --name k --path k --activity a --package c.k```
