@@ -3,7 +3,7 @@ Smallest APK
 
 This is source code with compile instructions for creating Android apk file of 3042 bytes.
 
-This project created in command line:
+This project created in command line:<br>
 ```android create project --target 9 --name k --path k --activity a --package c.k```
 
 ## Compilation ##
