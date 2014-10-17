@@ -13,7 +13,7 @@ To create build execute:<br>
 ```ant release```
 
 ## Release build ##
-You can find release build, signed with fake ```release.keystore```.
+You can find release build, signed with fake ```release.keystore``` in *apk* folder.
 
 // File Checksum Integrity Verifier version 2.05.<br>
 **MD5:** a15b4dfb9c739d6837423d61437c57b9<br>
