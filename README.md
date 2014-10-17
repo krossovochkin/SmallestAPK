@@ -16,5 +16,5 @@ To create build execute:<br>
 You can find release build, signed with fake ```release.keystore``` in *apk* folder.
 
 // File Checksum Integrity Verifier version 2.05.<br>
-**MD5:** a15b4dfb9c739d6837423d61437c57b9<br>
-**SHA-1:** 74521f685a4913ac4542a79cf0fb773b0320d3c8
+**MD5:** d0dadadfb6c53c976514e83f9a79d877<br>
+**SHA-1:** 58c88086081d2e469da28b420f577d8ebab391df
