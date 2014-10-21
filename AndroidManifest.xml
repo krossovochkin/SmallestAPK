@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="c.k">
-    <application>
-        <activity android:name=".a">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-    </application>
-</manifest>
+<?xml version="1.0" encoding="utf-8"?><manifest xmlns:a="http://schemas.android.com/apk/res/android" package="c.k"><application><activity a:name=".a"><intent-filter><action a:name="android.intent.action.MAIN"/><category a:name="android.intent.category.LAUNCHER" /></intent-filter></activity></application></manifest>

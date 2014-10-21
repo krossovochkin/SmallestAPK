@@ -11,7 +11,7 @@ public class a extends Activity
     {
         super.onCreate(savedInstanceState);
         TextView t = new TextView(this);
-        t.setText("Hello world");
+        t.setText(android.R.string.ok);
         setContentView(t);
     }
 }
