@@ -41,11 +41,9 @@ Application source code
 `a.java` is pretty simple. With also unreadable names where possible:
 
 `package c.k;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
-
 public class a extends Activity
 {    
     @Override
