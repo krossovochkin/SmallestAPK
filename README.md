@@ -3,15 +3,15 @@ Smallest APK
 
 Why?
 ----------
-Tons of code, gygabytes of resources, high speed internet connection...
-Nowadays applications in Google Play Store looks like a big monsters.
-But what is the smallest apk file that can be created?
-I just tried to figure out it by myself.
+Tons of code, gygabytes of resources, high speed internet connection...<br>
+Nowadays applications in Google Play Store looks like a big monsters.<br>
+But what is the smallest apk file that can be created?<br>
+I just tried to figure out it by myself.<br>
 I didn't try to play with bytes directly – I used command line and available tools.
 
 Let's start
 -----------
-Because apk size can be various depending on tools and libs version, I mention them.
+Because apk size can be various depending on tools and libs version, I mention them.<br>
 At first, we need to install all the soft needed:
  - JDK 1.7.0_11: http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html#jdk-7u11-oth-JPR
  - Android SDK 22.3: http://dl.google.com/android/android-sdk_r22.3-windows.zip
@@ -85,16 +85,16 @@ Not bad, but
 
 Go further
 -----------------
-Let's look at `xmlns:android`.
-This is just a declaration. We can write: `xmlns:a` and then use `a:name` instead of `android:name`.
+Let's look at `xmlns:android`.<br>
+This is just a declaration. We can write: `xmlns:a` and then use `a:name` instead of `android:name`.<br>
 Also we can write content of AndroidManifest.xml in one line.
 
-Assume, that it doesn't matter what text we will show in our application, I replaced `Hello world` string with `android.R.string.ok`.
+Assume, that it doesn't matter what text we will show in our application, I replaced `Hello world` string with `android.R.string.ok`.<br>
 You can say, that this is a cheating. May be ;)
 
-Apk file before signing is very small. But it doubles its size after signing.
-So, we need to reduce keystore size.
-There are many fields in keystore (Organization, Name, Country etc.), but only any one field is required.
+Apk file before signing is very small. But it doubles its size after signing.<br>
+So, we need to reduce keystore size.<br>
+There are many fields in keystore (Organization, Name, Country etc.), but only any one field is required.<br>
 So, fill `Organization` with `.` (dot), and create smallest sufficient passwords (`......` six dots).
 
 With this modifications apk file size becomes **2980** bytes!
