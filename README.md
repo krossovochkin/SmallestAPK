@@ -40,7 +40,8 @@ Application source code
 
 ```a.java``` is pretty simple. With also unreadable names where possible:
 
-```package c.k;
+```
+package c.k;
 import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -54,13 +55,15 @@ public class a extends Activity
         t.setText("Hello world");
         setContentView(t);
     }
-}```
+}
+```
 
 `AndroidManifest.xml`
 
 Application and Activity labels and icons are not required, so we remove them
 
-```<?xml version="1.0" encoding="utf-8"?>
+```
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" package="c.k">
 	<application>
 		<activity android:name=".a">
@@ -70,7 +73,8 @@ Application and Activity labels and icons are not required, so we remove them
 			</intent-filter>
 		</activity>
 	</application>
-</manifest>```
+</manifest>
+```
 
 compile and build this project using:
 
@@ -107,7 +111,8 @@ Let's build!
 
 Set Environment and other Variables:
 
-```set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_11
+```
+set JAVA_HOME=C:\Program Files\Java\jdk1.7.0_11
 set ANDROID_HOME=D:\Work\Github\smallapk\android-sdk-windows
 set DEV_HOME=%CD%
 set AAPT_PATH=%ANDROID_HOME%/build-tools/19.1.0/aapt.exe
@@ -116,29 +121,40 @@ set ANDROID_JAR=%ANDROID_HOME%/platforms/android-19/android.jar
 set ADB=%ANDROID_HOME%/platform-tools/adb.exe
 set PACKAGE_PATH=c/k
 set PACKAGE=c.k
-set MAIN_CLASS=a```
+set MAIN_CLASS=a
+```
 
 Create R.java (it will not be created because we don't have /res):
 
-```call %AAPT_PATH% package -f -m -J %DEV_HOME%/src -M %DEV_HOME%/AndroidManifest.xml -I %ANDROID_JAR%```
+```
+call %AAPT_PATH% package -f -m -J %DEV_HOME%/src -M %DEV_HOME%/AndroidManifest.xml -I %ANDROID_JAR%
+```
 
 Compile src, a.class will be created:
 
-```mkdir obj
-call "%JAVA_HOME%\bin\javac" -d %DEV_HOME%/obj -cp %ANDROID_JAR% -sourcepath %DEV_HOME%/src %DEV_HOME%/src/%PACKAGE_PATH%/*.java```
+```
+mkdir obj
+call "%JAVA_HOME%\bin\javac" -d %DEV_HOME%/obj -cp %ANDROID_JAR% -sourcepath %DEV_HOME%/src %DEV_HOME%/src/%PACKAGE_PATH%/*.java
+```
 
 Dex compiled sources into classes.dex:
 
-```mkdir bin
-call %DX_PATH% --dex --output=%DEV_HOME%/bin/classes.dex %DEV_HOME%/obj```
+```
+mkdir bin
+call %DX_PATH% --dex --output=%DEV_HOME%/bin/classes.dex %DEV_HOME%/obj
+```
 
 Create unsigned apk file:
 
-```call %AAPT_PATH% package -f -M %DEV_HOME%/AndroidManifest.xml -I %ANDROID_JAR% -F %DEV_HOME%/bin/AndroidTest.unsigned.apk %DEV_HOME%/bin```
+```
+call %AAPT_PATH% package -f -M %DEV_HOME%/AndroidManifest.xml -I %ANDROID_JAR% -F %DEV_HOME%/bin/AndroidTest.unsigned.apk %DEV_HOME%/bin
+```
 
 Sign apk file with out small keystore:
 
-```call "%JAVA_HOME%\bin\jarsigner" -sigalg SHA1withRSA -digestalg SHA1 -keystore %DEV_HOME%/j.jks -storepass ...... -keypass ...... -signedjar %DEV_HOME%/bin/AndroidTest.signed.apk %DEV_HOME%/bin/AndroidTest.unsigned.apk .```
+```
+call "%JAVA_HOME%\bin\jarsigner" -sigalg SHA1withRSA -digestalg SHA1 -keystore %DEV_HOME%/j.jks -storepass ...... -keypass ...... -signedjar %DEV_HOME%/bin/AndroidTest.signed.apk %DEV_HOME%/bin/AndroidTest.unsigned.apk .
+```
 
 This way we get apk file of **2905** bytes!!!
 
