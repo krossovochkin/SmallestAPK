@@ -158,6 +158,20 @@ call "%JAVA_HOME%\bin\jarsigner" -sigalg SHA1withRSA -digestalg SHA1 -keystore %
 
 This way we get apk file of **2905** bytes!!!
 
+Go further
+------------
+
+Thanks to [Jeffrey Smith](https://plus.google.com/109640827972528310413) for **G-G-GREATEST HINT**!<br>
+There is an option of `javac` command: `-g:none`, which prevents generating debug information while compiling!<br>
+Reference: http://docs.oracle.com/javase/7/docs/technotes/tools/windows/javac.html#options
+
+So, with this option:<br>
+```
+mkdir obj
+call "%JAVA_HOME%\bin\javac" -d %DEV_HOME%/obj -cp %ANDROID_JAR% -sourcepath %DEV_HOME%/src %DEV_HOME%/src/%PACKAGE_PATH%/*.java -g:none
+```
+apk file has now size of **2871** bytes!!
+
 Go further?
 -------------
 
